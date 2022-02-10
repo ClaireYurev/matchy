@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://art/Buttons/Settings Button.png" type="Texture" id=1]
+[ext_resource path="res://art/Buttons/Play Button.png" type="Texture" id=2]
+[ext_resource path="res://art/godot match 3 logo 2.png" type="Texture" id=3]
+[ext_resource path="res://scenes/BaseMenuPanel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://art/background 2.png" type="Texture" id=5]
+[ext_resource path="res://scripts/MainMenuPanel.gd" type="Script" id=6]
+[ext_resource path="res://art/build.png" type="Texture" id=7]
+
+[node name="Main" instance=ExtResource( 4 )]
+script = ExtResource( 6 )
+
+[node name="MyBackground" type="TextureRect" parent="." index="0"]
+visible = false
+margin_right = 576.0
+margin_bottom = 1156.0
+rect_min_size = Vector2( 576, 1156 )
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Graphic and Buttons" parent="MarginContainer" index="0"]
+margin_bottom = 1150.0
+
+[node name="Graphic" parent="MarginContainer/Graphic and Buttons" index="0"]
+margin_bottom = 726.0
+rect_min_size = Vector2( 488, 726 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+
+[node name="Buttons" parent="MarginContainer/Graphic and Buttons" index="1"]
+margin_top = 756.0
+margin_bottom = 1024.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Button 1" parent="MarginContainer/Graphic and Buttons/Buttons" index="0"]
+margin_bottom = 120.0
+rect_min_size = Vector2( 256, 120 )
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 3
+
+[node name="Button 2" parent="MarginContainer/Graphic and Buttons/Buttons" index="1"]
+margin_top = 140.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 512, 128 )
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Graphic and Buttons" index="2"]
+margin_top = 1054.0
+margin_right = 536.0
+margin_bottom = 1130.0
+rect_min_size = Vector2( 0, 76 )
+texture = ExtResource( 7 )
+stretch_mode = 6
+[connection signal="pressed" from="MarginContainer/Graphic and Buttons/Buttons/Button 1" to="." method="_on_Button_1_pressed"]
+[connection signal="pressed" from="MarginContainer/Graphic and Buttons/Buttons/Button 2" to="." method="_on_Button_2_pressed"]
