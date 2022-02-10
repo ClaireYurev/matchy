@@ -1,0 +1,7 @@
+# Secondary dev folders
+...art.ori/
+...scenes.ori/
+
+# Firebase & others
+.firebase/
+desktop.ini
