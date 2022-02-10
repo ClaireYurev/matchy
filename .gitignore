@@ -1,6 +1,8 @@
 # Secondary dev folders
 ...art.ori/
 ...scenes.ori/
+
+# UI folder excluded
 ...ui/
 
 # Firebase & others
